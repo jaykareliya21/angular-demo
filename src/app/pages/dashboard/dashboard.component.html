@@ -1,0 +1,55 @@
+<div>
+  <h4 class="mb-4 text-muted">Product </h4>
+  <div class="tab">
+    <button [class]="activeItem == true ? 'tablinks active' : 'tablinks'" (click)="tabEvent('item')">Items</button>
+    <button [class]="activeOrder == true ? 'tablinks active' : 'tablinks'" (click)="tabEvent('store')">Store</button>
+  </div>
+  <div class="row" *ngIf="activeItem">
+    <div class="col-md-6 col-lg-3 mb-4" *ngFor="let items of itemList">
+      <div class="card border-0 rounded-0">
+        <div class="card-body">
+          <div class="card-innerBody d-flex align-items-center">
+            <div class="card-icon text-light">
+              <img src="{{items.image_url}}" width="200px" alt=""/>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer d-flex ">
+          <small class="text-muted">{{items.name}}</small>
+          <small class="text-success ml-auto">
+            $ {{items.price}}
+          </small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row" *ngIf="activeOrder">
+    <div class="col-md-6 col-lg-3 mb-4" *ngFor="let stores of storList">
+      <div class="card border-0 rounded-0">
+        <div class="card-body">
+          <div class="card-innerBody d-flex align-items-center">
+            <div class="card-icon text-light">
+              <img src="{{stores.icon}}" width="100px" alt=""/>
+            </div>
+            <div class="ml-auto">
+              <p class="card-label text-right text-muted">{{stores.name}}</p>
+              <!-- <h4 class="card-text text-right ">$ 199,099</h4> -->
+            </div>
+          </div>
+          <!-- <div class="card-innerBody d-flex align-items-center">
+            <div class="card-icon text-light">
+              <img src="{{stores.icon}}" width="100px" alt=""/>
+            </div>
+          </div>
+          <div class="ml-auto">
+            <p class="card-label text-right text-muted">{{stores.name}}</p>
+            <h4 class="card-text text-right ">$ 199,099</h4>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>  
+
+</div>

@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-md fixed-top navbar-dark flex-fill">
+  <!-- <button class="sidebar-toggler ml-4" type="button">
+    <i class="fa fa-navicon"></i>
+  </button> -->
+  <!-- header -->
+  <!-- sidebar toggler -->
+  <div class="sidebar-toggler mr-3">
+    <a class="btn nav-link" (click)="toggleSidebar()"><i class="fa fa-bars"></i></a>
+  </div>
+  <!-- right menu toggler -->
+  <div class="nav-toggler-right mr-4 d-md-none">
+    <button class="" type="button" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed"
+      aria-controls="collapseBasic">
+      <!-- <span class="navbar-toggler-icon"></span> -->
+      <img src="./assets/img/user.jpg" class="img-fluid" alt="">
+    </button>
+    <span class="user-profile nav-alert bg-danger"></span>
+  </div>
+  <!-- left box -->
+  <ul class="navbar-nav flex-fill mt-1 align-items-center left-nav">
+    <li class="nav-item navicon">
+      <a class="btn nav-link" (click)="toggleSidebarPin()"><i class="fa fa-bars"></i></a>
+    </li>
+    <li class="nav-item flex-fill">
+      <input class="form-control navbar-search" type="text" placeholder="Search . . .">
+    </li>
+  </ul>
+
+  <!-- right menu -->
+</nav>
